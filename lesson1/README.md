@@ -12,5 +12,9 @@
 這是最基本的 HTML 文件結構，通過這些元素可以建立一個簡單的網頁。隨著需求的增加，可以在這個基礎上添加更多的元素和屬性來豐富網頁的內容和功能。
 ```
 
-回家查詢何謂Html DOM
+回家閱讀
+
+
+1. 回家查詢何謂Html DOM
+2. [什麼是html] ( https://developer.mozilla.org/zh-TW/docs/Learn/HTML/Introduction_to_HTML/Getting_started)
 
