@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>table</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            border: 2px solid rgb(200, 200, 200);
+            letter-spacing: 1px;
+            font-size: 0.8rem;
+        }
+
+        td,
+        th {
+            border: 1px solid rgb(190, 190, 190);
+            padding: 10px 20px;
+        }
+
+        th {
+            background-color: rgb(235, 235, 235);
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <tr>
+            <td>001</td>
+            <td>002</td>
+        </tr>
+        <tr>
+            <td>003</td>
+            <td>004</td>
+        </tr>
+        <tr>
+            <td>005</td>
+            <td>006</td>
+        </tr>
+    </table>
+    <br>
+    <table>
+        <tr>
+            <td colspan="2">001</td>
+            <td>003</td>
+            <td rowspan="2">004</td>
+        </tr>
+         <tr>
+            <td>001</td>
+            <td>002</td>
+            <td>003</td>
+        </tr>
+    </table>
+
+</body>
+
+</html>
