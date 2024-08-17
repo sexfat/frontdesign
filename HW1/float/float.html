@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>float layout</title>
+    <style>
+        .wrapper {
+            width: 1440px;
+            margin: auto;
+            padding: 20px 10%;
+        }
+
+        .wrapper .left {
+            float: left;
+        }
+        .wrapper h3 {
+          margin-top: 0;
+        }
+        .wrapper .spec {
+            width: auto;
+            margin: auto;
+            line-height: 36px;
+            display: inline-block;
+            margin-left: 20px;
+        }
+        .wrapper .spec p {
+           width: 270px;
+           line-height: 20px;
+        }
+
+        .wrapper img {
+            display: inline-block;
+            vertical-align: top;
+        }
+
+        .wrapper .right {
+            float: right;
+        }
+        .both {
+         clear: both;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="left">
+            <img src="./group-3.png" alt="">
+            <div class="spec">
+                <h3>Quality</h3>
+                <p>Quidam officiis similique sea ei, vel tollit indoctum efficiendi nihil tantas platonem eos. </p>
+            </div>
+
+        </div>
+        <div class="right">
+            <img src="./group-3.png" alt="">
+            <div class="spec">
+             <h3>Helpful</h3>
+            <p>Quidam officiis similique sea ei, vel tollit indoctum efficiendi nihil tantas platonem eos. </p>
+            </div>
+           
+        </div>
+        <div class="both"></div>
+    </div>
+
+</body>
+
+</html>
