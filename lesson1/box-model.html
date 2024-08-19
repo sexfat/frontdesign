@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .box {
+            width: 200px;
+            height: 100px;
+            padding: 20px;
+            border: 5px solid black;
+            margin: 10px;
+            background-color: lightblue;
+        }
+
+        .content-box {
+            width: 200px;
+            height: 100px;
+            padding: 20px;
+            border: 5px solid black;
+            box-sizing: content-box;
+            background-color: lightblue;
+            margin-bottom: 20px;
+        }
+
+        .border-box {
+            width: 200px;
+            height: 100px;
+            padding: 20px;
+            border: 5px solid black;
+            box-sizing: border-box;
+            background-color: lightcoral;
+        }
+
+        .section1 {
+            /* 父層 */
+            width: 100%;
+            min-height: 500px;
+           
+            background-color: #08ff9c;
+             border: 1px solid #fff;
+            /* overflow: hidden; */
+        }
+        .margintop {
+            /* 子層 */
+            margin-top: 100px;
+            width: 100%;
+            height: 300px;
+            background-color: #ff992d;       
+        }
+    </style>
+</head>
+
+<body>
+    <h2>盒模型</h2>
+    <div class="box">這是一個盒模型範例</div>
+    <div>
+        <h4>解釋：</h4>
+        <p>內容區域：寬度為 200px，高度為 100px。</p>
+
+        <p>內邊距：每邊 20px，將內容與邊框之間隔開。</p>
+
+        <p>邊框：5px 寬的黑色實線，包圍在內邊距的外側。</p>
+
+        <p>外邊距：每邊 10px，將該元素與周圍其他元素隔開。</p>
+
+        <p>總寬度 = 200px（內容） + 40px（內邊距） + 10px（邊框） + 20px（外邊距） = 270px</p>
+
+        <p>總高度 = 100px（內容） + 40px（內邊距） + 10px（邊框） + 20px（外邊距） = 170px</p>
+
+    </div>
+    <h2>盒模型 範圍</h2>
+    <div class="content-box">Content-box</div>
+    <div class="border-box">Border-box</div>
+    <div>
+        <h3>解釋：</h3>
+        <p>第一個方框使用 box-sizing: content-box，因此它的總寬度和高度會超過 200px x 100px。</p>
+        <p>第二個方框使用 box-sizing: border-box，因此它的總寬度和高度會精確地符合 200px x 100px 的設定。</p>
+    </div>
+    <h2>Margin Top & bottom的迷思</h2>
+    <div class="section1">
+        <!-- 父層 -->
+        <div class="margintop">
+          子層
+        </div>
+         <div class="margintop">
+          子層
+        </div>
+
+    </div>
+    <div>
+    <h3>解法</h3>
+    <p>
+    這種塌陷可以通過給父元素添加邊框、內邊距或使用 overflow: hidden 來避免。
+    </p>
+    </div>
+</body>
+
+</html>

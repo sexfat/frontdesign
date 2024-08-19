@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>position 版位</title>
+    <style>
+       body {
+          margin: 0;
+          padding: 0;
+       }
+        .rect {
+            width: 140px;
+            height: 160px;
+        }
+
+        .a {
+            background-color: rgb(184, 184, 184);
+            position: absolute;
+            top: 31px;
+            left: 36px;
+
+        }
+
+        .b {
+            background-color: rgb(103, 103, 103);
+            position: absolute;
+            left: 103px;
+            top: 117px;
+        }
+        .relative {
+            position: relative;
+            left: 300px;
+            top: 300px;
+            width: 500px;
+            height: 300px;
+            border: 1px dotted rgb(167, 167, 167);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="rect a">a</div>
+    <div class="rect b">b</div>
+    <div class="relative">
+        <div class="rect a">a</div>
+        <div class="rect b">b</div>
+    </div>
+
+</body>
+
+</html>
