@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* 元素選擇器 */
+        h1 {
+            color: darkblue;
+            font-size: 24px;
+        }
+
+        /* 類選擇器 */
+        .container {
+            padding: 20px;
+            border: 1px solid #ddd;
+        }
+
+        /* ID 選擇器 */
+        #main-content {
+            background-color: #f9f9f9;
+        }
+
+        /* 後代選擇器 */
+        .container p {
+            font-family: Arial, sans-serif;
+            color: #333;
+        }
+
+        /* 群組選擇器 */
+        h1,
+        .highlight {
+            font-weight: bold;
+        }
+
+        /* 子選擇器 */
+        ul > li {
+            list-style-type: square;
+        }
+
+        /* 相鄰兄弟選擇器 */
+        .title + p {
+            margin-top: 10px;
+            color: darkred;
+        }
+
+        /* 一般兄弟選擇器 */
+        .nested p~p {
+            color: green;
+        }
+
+        /* 屬性選擇器 */
+        input[type="text"] {
+            padding: 10px;
+            border: 1px solid #02ffd1;
+        }
+
+        /* 偽類選擇器 */
+        a:link {
+            color: blue;
+            text-decoration: none;
+        }
+
+        a:visited {
+            color: purple;
+        }
+
+        a:hover {
+            color: red;
+        }
+
+        /* 偽元素選擇器 */
+        h1::before {
+            content: "標題: ";
+            color: gray;
+        }
+
+        h1::after {
+            content: " - 結束";
+            color: gray;
+        }
+    </style>
+    <title>css 選取器</title>
+</head>
+
+<body>
+    <div id="main-content" class="container">
+        <h1 class="title">這是標題</h1>
+        <p class="description">這是一段描述文字。</p>
+        <p class="highlight">這是一段強調的文字。</p>
+
+        <ul class="items">
+            <li>項目一</li>
+            <li>項目二</li>
+            <li>項目三</li>
+        </ul>
+
+        <a href="https://example.com" class="link">這是一個鏈接</a>
+
+        <div class="nested">
+            <p>這是一個嵌套在 div 裡的段落。</p>
+            <p>另一個段落。</p>
+        </div>
+
+        <input type="text" placeholder="輸入文字...">
+    </div>
+
+</body>
+
+</html>

@@ -6,13 +6,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>position 版位</title>
     <style>
-       body {
-          margin: 0;
-          padding: 0;
-       }
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        h4 {
+            text-align: center;
+            font-size: 30px;
+        }
+
+        .text {
+             width: 800px;
+             margin: auto;
+
+        }
+
+
         .rect {
             width: 140px;
             height: 160px;
+            background-color: #e2e2e2;
         }
 
         .a {
@@ -29,6 +43,7 @@
             left: 103px;
             top: 117px;
         }
+
         .relative {
             position: relative;
             left: 300px;
@@ -37,17 +52,69 @@
             height: 300px;
             border: 1px dotted rgb(167, 167, 167);
         }
+        .static {
+          position: static;
+          /* static 的元素按照正常的文件流顯示，不會偏移。 所以 top left 會沒有效果 */
+        }
+         .fixed-box {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            z-index: 111111;
+            background-color: lightgreen;
+            /* fixed 的元素固定在瀏覽器窗口的右上角，無論頁面如何滾動都保持在這個位置。 */
+        }
+         .sticky-box {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background-color: lightpink;
+            /* sticky 的元素會固定在瀏覽器窗口的上方，無論頁面如何滾動都保持在這個位置。 */
+        }
+        /* 
+          */
+
     </style>
 </head>
 
 <body>
-    <div class="rect a">a</div>
-    <div class="rect b">b</div>
-    <div class="relative">
+ 
+   
+    <div class="absolute">
         <div class="rect a">a</div>
         <div class="rect b">b</div>
     </div>
 
+    <div class="relative">
+        <div class="rect a">a</div>
+        <div class="rect b">b</div>
+    </div>
+    <div>
+        <div class="rect static">static</div>
+    </div>
+    <div class="fixed-box rect">fixed</div>
+  
+     <div class="sticky-box">Sticky Position  <p>滾動頁面查看 sticky 元素的效果。</p></div>
+    <div style="height: 1500px;"></div>
+    <h4>position: sticky 的特點：</h4>
+    <p class="text">依賴滾動位置：
+
+sticky 元素的定位取決於用戶的滾動行為。元素在正常文檔流中隨頁面內容滾動，直到達到設定的閾值（由 top、right、bottom 或 left 定義）。當達到這個閾值時，元素變為固定在視口中指定的位置。
+當滾動超過父容器的範圍時，sticky 元素會恢復到正常的文檔流中。
+需要指定偏移值：
+
+要使元素變得“粘性”，你需要為它設定一個偏移值，例如 top: 0，當滾動到這個位置時，元素會固定住。
+影響元素上下文：
+
+sticky 元素依然在正常的文檔流中，因此它對其他元素的排列和佈局仍然有影響，並且其初始位置仍然佔據文檔流中的空間。</p>
+    
+    <h4>position: fixed 的特點：</h4>
+    <p class="text">相對於視窗固定：
+        fixed 元素的位置是相對於瀏覽器視窗（viewport）固定的，無論頁面如何滾動，元素都會保持在指定的位置。
+        因此，fixed 元素脫離了正常的文檔流，會覆蓋在其他元素之上，而不影響文檔流中的其他元素佈局。
+        不依賴滾動位置：
+        fixed 元素一旦設置，它就會一直固定在指定的位置，無論滾動條如何移動。常見的例子包括固定的導航欄、返回頂部的按鈕等。</p>
+       <div style="height: 500px;"></div>
 </body>
 
 </html>
