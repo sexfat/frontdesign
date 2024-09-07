@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>float layout</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .wrapper {
+            width: 1070px;
+            margin: auto;
+        }
+
+        .wrapper .left {
+            float: left;
+            width: 270px;
+        }
+
+        .left:nth-child(2) {
+            margin-left: 130px;
+        }
+        .left:nth-child(3) {
+            margin-left: 130px;
+        }
+        .wrapper h3 {
+            margin-top: 10px;
+        }
+        .wrapper .spec {
+            width: auto;
+            margin: auto;
+            display: inline-block;
+        }
+
+        .wrapper .spec p {
+            width: 270px;
+            line-height: 20px;
+        }
+
+        .img {
+            width: 270px;
+            height: 176px;
+            background-color: #dbdbdb;
+        }
+
+        .both {
+            clear: both;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="left">
+            <div class="img"></div>
+            <div class="spec">
+                <h3>Quality</h3>
+                <p>Quidam officiis similique sea ei, vel tollit indoctum efficiendi nihil tantas platonem eos. </p>
+            </div>
+
+        </div>
+        <div class="left">
+            <div class="img"></div>
+            <div class="spec">
+                <h3>Helpful</h3>
+                <p>Quidam officiis similique sea ei, vel tollit indoctum efficiendi nihil tantas platonem eos. </p>
+            </div>
+
+        </div>
+        <div class="left">
+            <div class="img"></div>
+            <div class="spec">
+                <h3>Efficient</h3>
+                <p>Quidam officiis similique sea ei, vel tollit indoctum efficiendi nihil tantas platonem eos. </p>
+            </div>
+
+        </div>
+        <div class="both"></div>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+    * {
+        box-sizing: border-box;
+    }
+        .wrapper {
+            width: 100%;
+        }
+
+        .box {
+            width: 183px;
+            height: 183px;
+            background-color: #c3c3c3;
+            border: 1px solid #333;
+        }
+
+        .s1 .container {
+            display: flex;
+            margin: auto;
+            width: 900px;
+            background-color: #aefc05;
+            padding: 10px;
+
+        }
+
+        .margin20 {
+            margin-top: 20px
+        }
+
+        .s2 .container {
+            display: flex;
+            flex-direction: row;
+            /* flex-direction: column;   */
+            /* flex-direction: row-reverse; */
+            /* flex-direction: column-reverse; */
+            margin: auto;
+            width: 900px;
+            background-color: #aefc05;
+            padding: 10px;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <section class="s1">
+            <div class="container">
+                <div class="box">1</div>
+                <div class="box">2</div>
+                <div class="box">3</div>
+            </div>
+        </section>
+        <section class="s2 margin20">
+            <div class="container">
+                <div class="box">1</div>
+                <div class="box">2</div>
+                <div class="box">3</div>
+            </div>
+        </section>
+
+    </div>
+
+</body>
+
+</html>

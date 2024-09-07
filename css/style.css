@@ -1,0 +1,24 @@
+body,
+h3,
+h5 {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.figma {
+    font-size: 24px;
+    position: fixed;
+    bottom: 0;
+    height: 65px;
+    width: 100%;
+    text-align: center;
+    background-color: #404040;
+    color: #fff;
+    padding-top: 35px;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+}

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        a,
+        image,
+        span {
+            display: block;
+            margin: 10px 0;
+        }
+
+        body {
+            padding-bottom: 100px;
+        }
+
+        .h1 {
+            font-size: 30px;
+        }
+
+        .outline {
+            display: block;
+            border: 1px solid #333;
+            padding: 10px 20px;
+            margin-bottom: 10px;
+        }
+
+        /* =================== */
+
+        /* 屬性選擇器 */
+        a[title] {
+            border: 2px solid #00ff00;
+            padding: 10px 20px;
+        }
+
+        input[type="text"] {
+            background-color: yellow;
+            padding: 10px;
+        }
+
+        a[href^="https"] {
+            color: green;
+        }
+
+        img[src$=".jpg"] {
+            border: 5px solid blue;
+        }
+
+        [alt*="flower"] {
+            border: 5px solid red;
+        }
+
+        /* 選擇所有 type 屬性為 "submit" 並且 disabled 的按鈕 */
+        input[type="submit"][disabled] {
+            background-color: rgb(255, 4, 4);
+        }
+
+        /* 選擇 class 屬性中包含 "highlight" 的元素 */
+        [class~="highlight"] {
+            background-color: yellow;
+        }
+
+        /* 選擇 lang 屬性為 "en" 或 "en-US" 的元素 */
+        [lang|="en"] .copyright {
+            color: #a6ff00;
+            font-size: 40px;
+
+        }
+
+        /* 這段 CSS 將 h2 和 h3 標籤的字體顏色設置為深藍色 */
+        h2,
+        h3 {
+            color: #0004ff;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        .combinator p {
+            color: #ff8800;
+        }
+
+        /* 只選擇 clild 的直接子元素 p */
+        .child>p {
+            color: rgb(30, 0, 255);
+        }
+
+        /* 選擇緊接在 h1 後的 p */
+        h1+p {
+            color: green;
+        }
+
+        /* 選擇所有 h2 之後的兄弟 p */
+        h2~p {
+            color: purple;
+        }
+
+        a.link:link {
+            color: blue;
+            /* 未訪問的鏈接為藍色 */
+        }
+
+        a.link:visited {
+            color: purple;
+            /* 已訪問的鏈接為紫色 */
+        }
+
+        a.link:hover {
+            color: red;
+            /* 滑鼠懸停時鏈接變為紅色 */
+        }
+
+        table,
+        tr,
+        td {
+            border-collapse: collapse;
+            border: 1px solid rgb(200, 200, 200);
+            letter-spacing: 1px;
+            font-size: 0.8rem;
+            padding: 10px 20px;
+        }
+
+        table tr:nth-child(even) {
+            background-color: rgb(255, 81, 0);
+        }
+
+        table tr:nth-child(odd) {
+            background-color: rgb(245, 245, 245);
+        }
+    </style>
+    <title>選擇器的種類</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <h2>選擇器的種類</h2>
+        <p>基本選擇器、組合選擇器、偽類與偽元素</p>
+        <a title="標題" href="#">超連結</a>
+        <input type="text">
+        <a href="https://www.google.com.tw">google</a>
+        <img src="image.jpg">
+        <a href="#" alt="flower">flower<a>
+                <input type="submit" value="送出" disabled>
+                <p class="highlight h1">我是重點</p>
+                <div class="copyright">版權</div>
+                <h2>標題h2</h2>
+                <h3>標題h3</h3>
+    </div>
+    <div class="combinator outline">
+        <p>這是 div 內的段落，文字將變為藍色。</p>
+        <div>
+            <p>這是 div 內的另一個嵌套的 p，文字也會變成藍色。</p>
+        </div>
+    </div>
+    <p>這是 div 外的段落，文字不會變藍。</p>
+
+    <div class="child outline">
+        <p>這是 div 內的段落，文字將變為藍色。</p>
+        <div>
+            <p>這是 div 內的另一個嵌套的 p，文字不會變成藍色。</p>
+        </div>
+    </div>
+    <div class="outline">
+        <h1>這是標題</h1>
+        <p>這是緊接在 h1 後的段落，文字將變為綠色。</p>
+        <p>這是第二個段落，文字不會變綠。</p>
+    </div>
+    <div class="outline">
+        <h2>這是副標題</h2>
+        <p>這是第一個兄弟段落，文字將變成紫色。</p>
+        <p>這是第二個兄弟段落，文字也會變成紫色。</p>
+        <div>
+            <p>這是一個不會受到影響的 p</p>
+        </div>
+        <p>這是另一個段落，文字同樣會變成紫色。</p>
+    </div>
+    <div class="outline">
+        <h2>偽類選擇器</h2>
+        <a class="link" href="##">偽類選擇器</a>
+    </div>
+    <table>
+        <tr>
+            <td>001</td>
+            <td>002</td>
+            <td>003</td>
+        </tr>
+        <tr>
+            <td>004</td>
+            <td>005</td>
+            <td>006</td>
+        </tr>
+        <tr>
+            <td>007</td>
+            <td>008</td>
+            <td>009</td>
+        </tr>
+    </table>
+</body>
+
+</html>
