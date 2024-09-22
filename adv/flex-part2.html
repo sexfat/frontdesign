@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex 練習</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        .wrapper {
+            width: 100%;
+        }
+
+        section {
+            margin: 10px 0;
+        }
+
+        .container {
+            display: flex;
+            border: 1px solid black;
+            height: 100px;
+            width: 400px;
+            margin: auto;
+            margin-bottom: 20px;
+        }
+
+        .container-600 {
+            width: 600px;
+        }
+
+        .item {
+            background-color: lightblue;
+            border: 1px solid navy;
+        }
+
+        .shrink-1 {
+            flex-shrink: 1;
+            /* 正常縮減 */
+            width: 200px;
+        }
+
+        .shrink-2 {
+            flex-shrink: 1;
+            /* 更強的縮減效果 */
+            width: 200px;
+        }
+
+        .shrink-3 {
+            flex-shrink: 0;
+            /* 不縮減 */
+            width: 200px;
+        }
+
+        .grow-1 {
+            flex-grow: 1;
+            /* 正常增長 */
+
+        }
+
+        .grow-2 {
+            flex-grow: 2;
+            /* 更強的增長效果 */
+        }
+
+        .grow-3 {
+            flex-grow: 0;
+            /* 不增長 */
+            width: 200px;
+        }
+         .basic-1 {
+            flex-basis: 100px; /* 基礎大小為 100px */
+        }
+
+        .basic-2 {
+            flex-basis: 200px; /* 基礎大小為 200px */
+        }
+
+        .basic-3 {
+            flex-basis: auto; /* 基礎大小由內容決定 */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <section>
+            <h2>flex shrink屬性練習</h2>
+            <div class="container">
+                <div class="item shrink-1"></div>
+                <div class="item shrink-2"></div>
+                <div class="item shrink-3"></div>
+            </div>
+        </section>
+        <section>
+            <h2>flex-grow 屬性練習</h2>
+            <div class="container container-600">
+                <div class="item grow-1"></div>
+                <div class="item grow-2"></div>
+                <div class="item grow-3"></div>
+            </div>
+        </section>
+        <section>
+            <h2>flex-basic 屬性練習</h2>
+            <div class="container container-600">
+                <div class="item basic-1"></div>
+                <div class="item basic-2"></div>
+                <div class="item basic-3">111</div>
+            </div>
+        </section>
+
+    </div>
+
+</body>
+
+</html>

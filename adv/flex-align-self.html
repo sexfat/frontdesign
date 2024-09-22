@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>align-self 範例</title>
+    <style>
+        /* Flex 容器樣式 */
+        .container {
+            display: flex;
+            height: 200px;
+            border: 2px solid black;
+            background-color: #f0f0f0;
+            align-items: flex-start; /* 預設所有項目在交叉軸上對齊頂部 */
+        }
+
+        /* 通用項目樣式 */
+        .item {
+            background-color: lightblue;
+            border: 1px solid navy;
+            padding: 20px;
+            margin: 5px;
+            text-align: center;
+        }
+
+        /* 特定項目使用 align-self 覆蓋對齊方式 */
+        /* 修改以下值試試看  auto | flex-start | flex-end | center | baseline | stretch */
+        .item-1 { /* 對齊到底部 */}
+
+        .item-2 { /* 垂直居中對齊 */}
+
+        .item-3 { /* 拉伸到填滿容器高度 */} 
+
+    </style>
+</head>
+<body>
+
+<h2>使用 align-self 屬性控制單個項目的對齊</h2>
+<div class="container">
+    <div class="item item-1">項目 1 (align-self: flex-end)</div>
+    <div class="item item-2">項目 2 (align-self: center)</div>
+    <div class="item item-3">項目 3 (align-self: stretch)</div>
+</div>
+
+</body>
+</html>

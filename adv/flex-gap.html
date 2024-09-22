@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gap, row-gap, column-gap 範例</title>
+    <style>
+        .container-flex {
+            display: flex;
+            gap: 20px; /* 所有項目之間的間距為 20px */
+            border: 2px solid black;
+            padding: 10px;
+        }
+
+        .container-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px 30px; /* 行間距 10px，列間距 30px */
+            border: 2px solid black;
+            padding: 10px;
+        }
+
+        .item {
+            background-color: lightblue;
+            border: 1px solid navy;
+            padding: 20px;
+            /* flex:1; */
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Flexbox 例子 (gap)</h2>
+<div class="container-flex">
+    <div class="item">項目 1</div>
+    <div class="item">項目 2</div>
+    <div class="item">項目 3</div>
+    <div class="item">項目 4</div>
+</div>
+
+<h2>Grid 例子 (row-gap 和 column-gap)</h2>
+<div class="container-grid">
+    <div class="item">項目 1</div>
+    <div class="item">項目 2</div>
+    <div class="item">項目 3</div>
+    <div class="item">項目 4</div>
+    <div class="item">項目 5</div>
+    <div class="item">項目 6</div>
+</div>
+
+</body>
+</html>

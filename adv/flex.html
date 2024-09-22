@@ -4,12 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>flex</title>
+    <title>flex 內元件練習</title>
     <link rel="stylesheet" href="../css/style.css">
     <style>
-    * {
-        box-sizing: border-box;
-    }
+        * {
+            box-sizing: border-box;
+        }
+
         .wrapper {
             width: 100%;
         }
@@ -45,7 +46,47 @@
             background-color: #aefc05;
             padding: 10px;
         }
-        
+
+        .s3 .container {
+            display: flex;
+            margin: auto;
+            width: 900px;
+            height: 200px;
+            padding: 10px;
+            margin-bottom: 20px;
+            background-color: #aefc05;
+        }
+
+        /* 項目通用樣式 */
+        .item {
+            background-color: #c3c3c3;
+            border: 1px solid #333;
+            color: navy;
+        }
+
+        /* 不同的 flex 設定 */
+        .item-1 {
+            flex: 1;
+            /* 增長因子為 1，基礎大小為 0（默認） */
+        }
+
+        .item-2 {
+            flex: 2;
+            /* 增長因子為 2，項目會增長到兩倍於 .item-1 */
+        }
+
+        .item-3 {
+            /* flex: 1 1 150px; /* 增長因子為 1，縮減因子為 1，基礎大小為 150px */
+            flex-grow: 1;
+            flex-shrink: 1;
+            flex-basis: 150px;
+        }
+
+        /* 這個項目不會增長也不會縮小 */
+        .item-4 {
+            flex: 0 0 100px;
+            /* 固定寬度，不會增長縮小 */
+        }
     </style>
 </head>
 
@@ -65,6 +106,16 @@
                 <div class="box">3</div>
             </div>
         </section>
+        <section class="s3 margin20">
+            <h2 style="text-align: center;">使用 flex 屬性</h2>
+            <div class="container">
+                <div class="item item-1">項目 1 (flex: 1)</div>
+                <div class="item item-2">項目 2 (flex: 2)</div>
+                <div class="item item-3">項目 3 (flex: 1 1 150px)</div>
+                <div class="item item-4">項目 4 (flex: 0 0 100px)</div>
+            </div>
+        </section>
+
 
     </div>
 

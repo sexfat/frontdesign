@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex-wrap 範例</title>
+    <style>
+        /* 通用容器樣式 */
+        .container {
+            display: flex;
+            border: 2px solid black;
+            width: 100%; /* 設定固定寬度 */
+            margin-bottom: 20px;
+            background-color: #f9f9f9;
+        }
+
+        /* 通用項目樣式 */
+        .item {
+            background-color: lightblue;
+            border: 1px solid navy;
+            padding: 10px;
+            margin: 5px;
+            width: 400px; /* 固定每個項目的寬度 */
+        }
+    </style>
+</head>
+<body>
+
+<h2>flex-wrap: nowrap (默認)</h2>
+<div class="container" style="flex-wrap: nowrap;">
+    <div class="item">項目 1</div>
+    <div class="item">項目 2</div>
+    <div class="item">項目 3</div>
+    <div class="item">項目 4</div>
+</div>
+
+<h2>flex-wrap: wrap</h2>
+<div class="container" style="flex-wrap: wrap;">
+    <div class="item">項目 1</div>
+    <div class="item">項目 2</div>
+    <div class="item">項目 3</div>
+    <div class="item">項目 4</div>
+</div>
+
+<h2>flex-wrap: wrap-reverse</h2>
+<div class="container" style="flex-wrap: wrap-reverse;">
+    <div class="item">項目 1</div>
+    <div class="item">項目 2</div>
+    <div class="item">項目 3</div>
+    <div class="item">項目 4</div>
+</div>
+
+</body>
+</html>
