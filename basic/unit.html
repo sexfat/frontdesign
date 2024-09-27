@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css裡常見的單位</title>
+    <style>
+        html {
+            font-size: 20px;
+        }
+
+        body {
+            margin: 0;
+            padding: 10px;
+            font-size: 20px;
+        }
+
+        .box {
+            /* 絕對單位（適用於固定尺寸）*/
+            width: 200px;
+            height: 200px;
+            background-color: #2b9cf8;
+        }
+
+        section {
+            margin: 0 0 80px;
+        }
+
+        h1 {
+            font-size: 24px;
+        }
+
+        p.em {
+            font-size: 24px;
+            /* 外層文字基本大小 */
+        }
+
+        .em .inner {
+            /* 內層文字基本大小 48px */
+            font-size: 2em;
+        }
+
+        p.rem {
+            font-size: 2rem;
+            /* 外層文字基本大小  40px */
+        }
+
+        .rem .inner {
+            /* 內層文字基本大小 60px */
+            font-size: 3rem;
+        }
+
+        .w500 {
+            width: 700px;
+            background-color: blue;
+            margin: auto;
+        }
+
+        .w-inner {
+            width: 80%;
+            height: 500px;
+            margin: auto;
+            background-color: #2b9cf8;
+        }
+        .vw {
+            width: 80vw; /* 寬度等於瀏覽器視窗的 80% */
+            background-color: blue;
+            margin: auto;
+        }
+        .vh {
+            height: 80vh;  
+            background-color: blue;
+            margin: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <h1>px 絕對單位</h1>
+        <div class="box"></div>
+    </section>
+
+    <section>
+        <h1>em相對單位</h1>
+        <p class="em">
+            外層文字大小
+            <span class="inner">內層文字大小</span>
+        </p>
+        <h1>rem相對單位</h1>
+        <p class="rem">
+            外層文字大小
+            <span class="inner">內層文字大小</span>
+        </p>
+    </section>
+    <section>
+        <div class="w500">
+            <div class="w-inner">
+                <p class="width"></p>
+            </div>
+        </div>
+
+
+    </section>
+    <section style="width: 90%; margin: auto; background-color: #a1f6ff;">
+      <h1 style="text-align: center;">vw vh</h1>
+      <div class="vw">
+        <div class="vh">
+             
+        </div>
+      </div>
+    
+    </section>
+
+    <script>
+        // 等待文檔完全加載
+        document.addEventListener('DOMContentLoaded', function () {
+            // 獲取 'w-inner' 元素的寬度
+            var innerWidth = document.querySelector('.w-inner').offsetWidth;
+
+            // 將寬度值設置到 'p' 元素的內容中
+            document.querySelector('p.width').textContent = 'Width: ' + innerWidth + 'px';
+        });
+
+    </script>
+</body>
+
+</html>
