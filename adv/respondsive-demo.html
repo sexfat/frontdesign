@@ -124,10 +124,10 @@
         }
 
         .s4 .content .item {
-           /* max-width: 470px;
+            /* max-width: 470px;
            width: 100%; */
-           width: 470px;
-           margin: 0 auto;
+            width: 470px;
+            margin: 0 auto;
         }
 
         .s4 .content .item .img {
@@ -138,25 +138,65 @@
         }
 
         .s4 .content .item h4 {
-          margin-top: 24px;
-          font-size: 24px;
-          font-weight: 700;
-          line-height: 32px;
+            margin-top: 24px;
+            font-size: 24px;
+            font-weight: 700;
+            line-height: 32px;
         }
+
         .s4 .content .item p {
-          margin-top: 7px;
-          color: #999999
+            margin-top: 7px;
+            color: #999999
         }
 
-        @media screen and (max-width : 768px){
-                  .s4 .content {
-                    flex-direction: column;
-                  }
-                   .s4 .content .item {
-                     margin-bottom: 60px;
-                   }
+        @media screen and (max-width : 768px) {
+            .s4 .content {
+                flex-direction: column;
+            }
+
+            .s4 .content .item {
+                margin-bottom: 60px;
+            }
         }
 
+        .s5 .content {
+            width: 100%;
+            margin: auto;
+            max-width: 1170px;
+            display: flex;
+            flex-wrap: wrap;
+            /* 讓響應式都置中的屬性 */
+            justify-content: center;
+            gap: 30px;
+
+        }
+
+        .s5 .content .item {
+            max-width: 270px;
+            width: 100%;
+        }
+
+        .s5 .content .item .img {
+            width: 100%;
+            height: 192px;
+            background-color: #e8e8e8;
+        }
+
+
+        @media screen and (max-width : 600px) {
+            .s5 .content {
+                gap: 20px;
+            }
+
+            .s5 .content .item {
+                width: 168px;
+            }
+
+            .s5 .content .item .img {
+                width: 168px;
+                height: 120px;
+            }
+        }
     </style>
 
 
@@ -207,6 +247,34 @@
 
             </div>
 
+        </section>
+        <section class="s5">
+            <div class="content">
+                <div class="item">
+                    <div class="img"></div>
+                </div>
+                <div class="item">
+                    <div class="img"></div>
+                </div>
+                <div class="item">
+                    <div class="img"></div>
+                </div>
+                <div class="item">
+                    <div class="img"></div>
+                </div>
+                <div class="item">
+                    <div class="img"></div>
+                </div>
+                <div class="item">
+                    <div class="img"></div>
+                </div>
+                <div class="item">
+                    <div class="img"></div>
+                </div>
+                <div class="item">
+                    <div class="img"></div>
+                </div>
+            </div>
         </section>
     </div>
 
