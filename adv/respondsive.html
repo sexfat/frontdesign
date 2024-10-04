@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+
+/*** ======================== 寫的方式：由大尺寸寫到小尺寸，使用 max-width ============================ ***/    
+
+        .wrapper {
+            width: 100%;
+        }
+        section {
+            max-width: 1170px;
+            width: 100%;
+            margin: 15px auto;
+        }
+
+        h2 {
+            font-size: 40px;
+            color: black;
+        }
+        .box {
+           width: 100%;
+           background-color: #007bff;
+           height: 300px;
+        }
+
+        @media screen and (max-width: 768px) {
+            h2 {
+                font-size: 24px;
+                color: rosybrown;
+            }
+            .box {
+              width: 90%;
+              margin: auto;
+              background-color: #00ffcc; 
+            }
+        }
+
+
+/* ===================== 由小尺寸寫到大尺寸 ===================== */
+        /* 原本默認的 */
+        /* h2 {
+           font-size: 40px;
+           color : #000;
+        
+        } */
+        /* 由小的開始寫 */
+        /* @media screen and (min-width: 550px) {
+            h2 {
+              font-size: 20px;
+              color: rosybrown;
+            }
+        } */
+        /* 平板尺寸 */
+        /* @media screen and (min-width: 768px) {
+              h2 {
+              font-size: 30px;
+              color: #e07400;
+            }
+        } */
+    </style>
+    <script src="../js/main.js" async></script>
+    <title>響應式網站 基礎</title>
+    
+</head>
+
+<body>
+    <div class="wrapper">
+        <section>
+            <h2>文字大小</h2>
+        </section>
+        <section>
+           <div class="box"></div>
+        </section>
+
+    </div>
+</body>
+
+
+</html>
