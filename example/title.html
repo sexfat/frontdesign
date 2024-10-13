@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>偽元素範例</title>
+    <style>
+        h1 {
+            text-align: center;
+        }
+
+        h1::before {
+            content: '';
+            /* 插入一條裝飾線 */
+            display: inline-block;
+            width: 200px;
+            height: 2px;
+            background-color: #007bff;
+            vertical-align: middle;
+            margin-right: 20px;
+        }
+
+        h1::after {
+            content: '';
+            /* 插入一條裝飾線 */
+            display: inline-block;
+            width: 200px;
+            height: 2px;
+            background-color: #007bff;
+            vertical-align: middle;
+            margin-left: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>歡迎來到我的網站</h1>
+
+</body>
+
+</html>

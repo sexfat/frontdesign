@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>圓形圖片懸停效果</title>
+    <style>
+        /* 圓形圖片基本樣式 */
+        .circle-img {
+            width: 300px;             /* 圖片寬度 */
+            height: 300px;            /* 圖片高度 */
+            border-radius: 50%;       /* 圓形 */
+            overflow: hidden;         /* 隱藏超出邊界的部分 */
+            border: 5px solid #007bff; /* 初始邊框寬度 */
+            object-fit: cover;        /* 圖片填滿容器，保持比例 */
+            transition: border 0.3s ease; /* 平滑的過渡效果 */
+        }
+
+        /* 懸停時的邊框變粗 */
+        .circle-img:hover {
+            border-width: 30px;  /* 邊框變粗 */
+        }
+
+        /* 中央對齊的容器 */
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <img src="https://picsum.photos/300/300" alt="圖片" class="circle-img">
+</div>
+
+</body>
+</html>

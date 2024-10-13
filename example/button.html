@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>動態按鈕效果</title>
+    <style>
+         body {
+           background-color: #3b3b3b;
+         
+         }
+        .button {
+            position: relative;
+            padding: 10px 20px;
+            font-size: 1em;
+            color: white;
+            background-color: #007bff;
+            border: none;
+            cursor: pointer;
+            overflow: hidden;
+        }
+
+        .button::before, .button::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background-color: white;
+            transition: all 0.3s;
+        }
+
+        .button::before {
+            top: 0;
+            left: -100%;
+        }
+
+        .button::after {
+            bottom: 0;
+            right: -100%;
+        }
+
+        .button:hover::before {
+            left: 0;
+        }
+
+        .button:hover::after {
+            right: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <button class="button">按鈕</button>
+
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>圖片動畫</title>
+    <style>
+    * {
+        box-sizing: border-box;
+    }
+        .pic {
+            width: 400px;
+            height: 600px;
+            position: relative;
+            overflow: hidden;
+        }
+        .pic .desc {
+            position: absolute;
+            bottom: -50px;
+            left: 0;
+            right: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            padding: 10px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+         .pic .desc {
+            transition: bottom 0.5s;
+        }
+        .pic:hover .desc {
+            bottom: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="pic">
+        <img src="https://picsum.photos/400/600" alt="圖片">
+        <div class="desc">圖片的說明與標題</div>
+    </div>
+</body>
+
+</html>
