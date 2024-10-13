@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>按鈕四邊動畫效果</title>
+    <style>
+         body {
+           background-color: #343434;
+         }
+        /* 按鈕基本樣式 */
+        .button {
+            position: relative;
+            display: inline-block;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            color: white;
+            background-color: #007bff;
+            border: none;
+            cursor: pointer;
+            overflow: hidden;
+            text-align: center;
+            transition: background-color 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #0056b3; /* 改變按鈕背景顏色 */
+        }
+
+        /* 偽元素：四條邊框的設定 */
+        .button::before,
+        .button::after,
+        .button span::before,
+        .button span::after {
+            content: '';
+            position: absolute;
+            background-color: white;
+            transition: all 0.3s ease;
+        }
+
+        /* 上邊框 */
+        .button::before {
+            height: 2px;
+            width: 0;
+            top: 0;
+            left: 0;
+        }
+
+        /* 下邊框 */
+        .button::after {
+            height: 2px;
+            width: 0;
+            bottom: 0;
+            right: 0;
+        }
+
+        /* 左邊框 */
+        .button span::before {
+            width: 2px;
+            height: 0;
+            top: 0;
+            left: 0;
+        }
+
+        /* 右邊框 */
+        .button span::after {
+            width: 2px;
+            height: 0;
+            bottom: 0;
+            right: 0;
+        }
+
+        /* 懸停時的動畫效果 */
+        .button:hover::before,
+        .button:hover::after {
+            width: 100%; /* 上下邊框展開 */
+        }
+
+        .button:hover span::before,
+        .button:hover span::after {
+            height: 100%; /* 左右邊框展開 */
+        }
+    </style>
+</head>
+<body>
+
+    <button class="button">
+        <span>按鈕</span>
+    </button>
+
+</body>
+</html>
