@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Simple Calendar</title>
+<style>
+body, html {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+}
+
+.calendar {
+    width: 350px;
+    background: white;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.month {
+    width: 100%;
+    background: #333;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.month h1 {
+    font-size: 24px;
+}
+
+.month p {
+    font-size: 16px;
+}
+
+.weekdays, .days {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px 0;
+}
+
+.weekdays div, .days div {
+    width: 14.28%;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.days div {
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.days div:hover {
+    background-color: #f4f4f4;
+}
+.today {
+    background-color: #4CAF50; /* Green background for today */
+    color: white; /* White text for better visibility */
+}
+
+
+</style>
+<!-- <link rel="stylesheet" href="styles.css"> -->
+</head>
+<body>
+<div class="calendar">
+    <div class="month">
+        <button class="prev" onclick="moveDate('prev')">&#10094;</button>
+        <div class="date">
+            <h1></h1>
+            <p></p>
+        </div>
+        <button class="next" onclick="moveDate('next')">&#10095;</button>
+    </div>
+    <div class="weekdays">
+        <div>Sun</div>
+        <div>Mon</div>
+        <div>Tue</div>
+        <div>Wed</div>
+        <div>Thu</div>
+        <div>Fri</div>
+        <div>Sat</div>
+    </div>
+    <div class="days"></div>
+</div>
+<!-- <script src="script.js"></script> -->
+<script>
+let dt = new Date();
+
+function renderDate() {
+    dt.setDate(1);
+    const monthDays = document.querySelector(".days");
+    const lastDay = new Date(dt.getFullYear(), dt.getMonth() + 1, 0).getDate();
+    const prevLastDay = new Date(dt.getFullYear(), dt.getMonth(), 0).getDate();
+    const firstDayIndex = dt.getDay();
+    const lastDayIndex = new Date(dt.getFullYear(), dt.getMonth() + 1, 0).getDay();
+    const nextDays = 7 - lastDayIndex - 1;
+
+    let days = "";
+
+    for (let x = firstDayIndex; x > 0; x--) {
+        days += `<div class='prev-date'>${prevLastDay - x + 1}</div>`;
+    }
+
+    for (let i = 1; i <= lastDay; i++) {
+        if (i === new Date().getDate() && dt.getMonth() === new Date().getMonth()) {
+            days += `<div class='today'>${i}</div>`;
+        } else {
+            days += `<div>${i}</div>`;
+        }
+    }
+
+    for (let j = 1; j <= nextDays; j++) {
+        days += `<div class='next-date'>${j}</div>`;
+    }
+    monthDays.innerHTML = days;
+
+    document.querySelector('.date h1').innerHTML = dt.toLocaleString('default', { month: 'long' });
+    document.querySelector('.date p').innerHTML = new Date().toDateString();
+}
+
+function moveDate(dir) {
+    if (dir === 'prev') {
+        dt.setMonth(dt.getMonth() - 1);
+    } else if (dir === 'next') {
+        dt.setMonth(dt.getMonth() + 1);
+    }
+    renderDate();
+}
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    renderDate();
+});
+
+for (let i = 1; i <= lastDay; i++) {
+    if (i === new Date().getDate() && dt.getMonth() === new Date().getMonth() && dt.getFullYear() === new Date().getFullYear()) {
+        days += `<div class='today'>${i}</div>`;
+    } else {
+        days += `<div>${i}</div>`;
+    }
+}
+
+
+</script>
+</body>
+</html>

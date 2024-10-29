@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>右側滑出選單 - 改善版</title>
+    <style>
+        /* 全局樣式 */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+
+        /* 漢堡按鈕 */
+        .menu-button {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1em;
+            cursor: pointer;
+            z-index: 2; /* 確保按鈕在遮罩和選單之上 */
+        }
+
+        /* 選單容器 */
+        .side-menu {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 300px;
+            height: 100vh;
+            background-color: #007bff;
+            color: white;
+            transform: translateX(100%); /* 初始隱藏在螢幕外 */
+            transition: transform 0.3s ease;
+            padding: 20px;
+            z-index: 2; /* 選單在遮罩之上 */
+        }
+
+        /* 顯示選單時的狀態 */
+        .side-menu.active {
+            transform: translateX(0); /* 選單滑出到螢幕內 */
+        }
+
+        /* 選單內的連結 */
+        .side-menu a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            margin: 15px 0;
+            font-size: 1.2em;
+        }
+
+        /* 遮罩 */
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background-color: rgba(0, 0, 0, 0.5);
+            opacity: 0; /* 初始隱藏 */
+            visibility: hidden;
+            transition: opacity 0.3s ease;
+            z-index: 1; /* 遮罩在選單下方 */
+        }
+
+        /* 顯示遮罩的狀態 */
+        .overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 漢堡按鈕 -->
+    <button class="menu-button">☰ 選單</button>
+
+    <!-- 右側滑出的選單 -->
+    <div class="side-menu">
+        <h2>選單</h2>
+        <a href="#">首頁</a>
+        <a href="#">關於我們</a>
+        <a href="#">服務</a>
+        <a href="#">聯絡我們</a>
+    </div>
+
+    <!-- 背景遮罩 -->
+    <div class="overlay"></div>
+
+    <script>
+        // 選取按鈕、選單和遮罩
+        const menuButton = document.querySelector('.menu-button');
+        const sideMenu = document.querySelector('.side-menu');
+        const overlay = document.querySelector('.overlay');
+
+        // 點擊按鈕時，顯示選單與遮罩
+        menuButton.addEventListener('click', () => {
+            sideMenu.classList.toggle('active');
+            overlay.classList.toggle('active');
+        });
+
+        // 點擊遮罩時，隱藏選單與遮罩
+        overlay.addEventListener('click', () => {
+            sideMenu.classList.remove('active');
+            overlay.classList.remove('active');
+        });
+    </script>
+
+</body>
+</html>
